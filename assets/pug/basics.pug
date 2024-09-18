@@ -3,10 +3,16 @@ div(class='basics')
     div(class='main')
       span(class='name')=resume.basics.name
       span(class='label')=resume.basics.label
+
     div(class='side')
       ul(class='contact')
-        li=resume.basics.phone
-        li=resume.basics.email
+        li
+          a(href="tel:" + resume.basics.phone)=resume.basics.phone
+        li
+          a(href="mailto:" + resume.basics.email)=resume.basics.email
         li(class='margin-text-5')=helper.calcLocation(resume.basics.location)
   if resume.basics.summary
-    div(class='summary markdown padding-container-2')!=helper.mdToHtml(resume.basics.summary)
+    div(class='summary markdown padding-container-2')
+      div(class='markdown-content')!=helper.mdToHtml(resume.basics.summary)
+      if resume.basics.image
+        img(src=resume.basics.image, width=128, height=128)

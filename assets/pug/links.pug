@@ -8,4 +8,8 @@ if helper.validArray(resume.basics.profiles) || resume.basics.url
             a(href=resume.basics.url)!=helper.beautifyLink(resume.basics.url)
         each profile in resume.basics.profiles
           li(class='article margin-text-4')
-            a(href=profile.url)!=helper.beautifyLink(profile.url)
+            if profile.network
+              strong
+                a(href=profile.url)!=profile.network
+            else
+              a(href=profile.url)!=helper.beautifyLink(profile.url)

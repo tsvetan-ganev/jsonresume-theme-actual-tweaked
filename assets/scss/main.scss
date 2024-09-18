@@ -5,20 +5,11 @@
   .highlights {
     width: auto;
     display: block;
-    padding: 0 $space-1;
+    padding: 0 1.5rem;
     margin-bottom: 0;
-    columns: 2;
-    column-width: ($content-width * math.div($content-main-percentage, 100%) - 3 * $space-1 - $space-4) * 0.5;
-    column-gap: $space-1;
 
     li {
       font-size: $font-size-xsmall;
-      list-style: none;
-
-      &:before {
-        content: "· ";
-        vertical-align: middle;
-      }
     }
   }
 

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* Workaround for 'break-before:avoid' */
 * {
   margin: 0;
@@ -218,19 +217,11 @@ li:first-child {
 .main .highlights {
   width: auto;
   display: block;
-  padding: 0 10px;
+  padding: 0 1.5rem;
   margin-bottom: 0;
-  columns: 2;
-  column-width: 310px;
-  column-gap: 10px;
 }
 .main .highlights li {
   font-size: 14px;
-  list-style: none;
-}
-.main .highlights li:before {
-  content: "· ";
-  vertical-align: middle;
 }
 .main .left {
   display: table-cell;
@@ -271,6 +262,17 @@ li:first-child {
   font-weight: lighter;
   display: block;
   margin-left: -1.6px;
+}
+.basics .summary {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.basics .summary .markdown-content {
+  width: 70%;
+}
+.basics .summary img {
+  margin: 0;
 }
 .basics .side {
   vertical-align: middle;
@@ -363,4 +365,8 @@ li:first-child {
   font-size: 14.5px;
   font-weight: lighter;
   font-style: italic;
+}
+
+.work li:not(:last-of-type) {
+  margin-bottom: 0.25rem;
 }

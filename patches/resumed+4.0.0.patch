@@ -1,0 +1,27 @@
+diff --git a/node_modules/resumed/dist/index.js b/node_modules/resumed/dist/index.js
+index b65be5a..a3f7e15 100644
+--- a/node_modules/resumed/dist/index.js
++++ b/node_modules/resumed/dist/index.js
+@@ -13,6 +13,7 @@ n.command("render [filename]", "Render resume", {
+ }).option("-o, --output", "Output filename", "resume.html").option("-t, --theme", "Theme to use").action(
+   async (e = "resume.json", { output: o, theme: t }) => {
+     const i = JSON.parse(await s(e, "utf-8")), a = t ?? i?.meta?.theme;
+     if (!a) {
+       console.error(
+         `No theme to use. Please specify one via the ${r(
+@@ -23,8 +24,13 @@ n.command("render [filename]", "Render resume", {
+     }
+     let m;
+     try {
+-      m = await import(a);
+-    } catch {
++      if (a === '.') {
++        m = h(import.meta.url)('../../../index')
++      } else {
++        m = await import(a);
++      }
++    } catch (e) {
++      console.error(e)
+       console.error(
+         `Could not load theme ${r(a)}. Is it installed?`
+       ), process.exitCode = 1;

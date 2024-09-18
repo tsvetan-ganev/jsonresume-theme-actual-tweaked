@@ -7,7 +7,8 @@ if helper.validArray(resume.projects)
           div(class='header no-alone-1')
             div(class='table')
               div(class='left')
-                span(class='title')=helper.arrayToPhrase(project.roles)
+                if project.roles && project.roles.length
+                  span(class='title')=helper.arrayToPhrase(project.roles)
                 span(class='subtitle margin-text-1')
                   a(href=project.url)=project.name
               div(class='right')

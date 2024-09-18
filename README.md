@@ -76,6 +76,7 @@ This theme supports the following JSON paths
     "phone": "(912) 555-4321",
     "url": "https://www.richardh.example.com",
     "summary": "Lorem ipsum...",
+    "image": "https://url.to.image.com/1.jpg",
     "location": {
       "city": "San Francisco",
       "countryCode": "US",
